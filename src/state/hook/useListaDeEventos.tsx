@@ -1,4 +1,4 @@
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { IEvento } from "../../interfaces/IEvento";
 import {listaDeEventosState} from "../selectores";
 

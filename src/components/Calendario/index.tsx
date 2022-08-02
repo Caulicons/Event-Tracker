@@ -24,17 +24,17 @@ const Calendario: React.FC = () => {
   const atualizarEvento = useAtualizaEvento()
 
   const onEventDragFinish: OnEventDragFinish = (
-    updatedEvent: CalendarEvent,
+    prevEvent: CalendarEvent,
+    kalendEventoAtualizado: CalendarEvent,
   ) => {
-    const evento = eventos.find(evento => evento.descricao === updatedEvent.summary)
+    const evento = eventos.find(evento => evento.id === kalendEventoAtualizado.id)
     if (evento) {
       const eventoAtualizado = { ...evento }
-      eventoAtualizado.inicio = new Date(updatedEvent.startAt)
-      eventoAtualizado.fim = new Date(updatedEvent.endAt)
+      eventoAtualizado.inicio = new Date(kalendEventoAtualizado.startAt)
+      eventoAtualizado.fim = new Date(kalendEventoAtualizado.endAt)
 
       atualizarEvento(eventoAtualizado)
     }
-
   };
 
   eventos.forEach(evento => {
@@ -50,6 +50,7 @@ const Calendario: React.FC = () => {
       color: 'blue'
     })
   })
+
   return (
     <div className={style.Container}>
       <Kalend

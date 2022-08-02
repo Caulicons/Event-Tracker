@@ -39,7 +39,7 @@ const Filtro: React.FC = () => {
       placeholder="Por data"
       value={data} />
 
-    <select name="status" id="status" value={status} onChange={event => setStatus(event.target.value)}>
+    <select className={style.input} name="status" id="status" value={status} onChange={event => setStatus(event.target.value)}>
       <option value="ambos">Todos</option>
       <option value="completos">Apenas Completo</option>
       <option value="incompletos">Apenas Incompleto</option>
