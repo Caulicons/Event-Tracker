@@ -2,7 +2,7 @@
 
 If you want to organize your life, I think this app is for you.
 
-### Preview
+### [Preview](https://event-tracker-indol.vercel.app/)
 
 <img width=100% src="./preview.gif"/>
 
